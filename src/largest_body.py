@@ -52,14 +52,19 @@ mask2 = (
 dams_gdf["in_water_buffered"] = mask2
 
 # %%
+dams_gdf["changed"] = ~dams_gdf["in_water"] & dams_gdf["in_water_buffered"]
+
+# %%
 m = water_buffered.explore(opacity=0.5)
-m = dams_gdf.geometry.explore(
-    (mask == False) & (mask2 == True),
+m = dams_gdf.explore(
+    "in_water_buffered",
     m=m,
     marker_kwds={"radius": 7},
-    cmap=lambda x: "green" if x else "red",
+    cmap=["red", "green"],
     legend=True,
 )
 m
 
+
+# %%
 # %%
