@@ -16,6 +16,7 @@ rioxarray = "^0.13.1"
 matplotlib = "^3.6.2"
 seaborn = "^0.13.0"
 contextily = "^1.4.0"
+folium = "^0.15.0"
 
 
 [tool.poetry.group.dev.dependencies]
